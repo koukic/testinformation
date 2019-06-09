@@ -71,3 +71,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
