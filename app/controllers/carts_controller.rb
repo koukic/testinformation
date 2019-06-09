@@ -11,7 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @information = Information.find(params[:id])
+     
   end
 
   # GET /carts/new

@@ -3,7 +3,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Browse the latest information
+        Browse the latest test information
       </h1>
     </div>
   </div>
@@ -13,10 +13,9 @@
 <div class="instrument-index-grid pt4">
   <% @informations.each do |information| %>
 
-     <div class="instrument border-light">
+    <div class="instrument border-light">
       <div class="instrument-thumb">
       <%= link_to image_tag(information.image_url(:thumb)), information %>
-       
 
       <% if information.condition? %>
         <div class="condition">
@@ -25,11 +24,13 @@
       <% end %>
       </div>
 
+
     <div class="pa3">
 
-      <h12 class="fw7 f4"><%= link_to information.title, information %></h12>
+      <h3 class="fw7 f4 title"><%= link_to information.title, information %></h3>
 
       <p class="has-text-gray fg pt1">Post by <%= information.user.name %></p>
+
 
       <% if information_author(information) %>
          <%= link_to 'Edit', edit_information_path(information), class: "button is-small" %>
@@ -37,6 +38,6 @@
       <% end %>
 
     </div>
-    
+  </div>
   <% end %>
 </div>
