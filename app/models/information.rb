@@ -11,6 +11,9 @@ class Information < ApplicationRecord
   allowed."}
   CONDITION = %w{ New Fair Poor }
   
+  
+   
+  
   private
   
   def not_referenced_by_any_line_item

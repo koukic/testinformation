@@ -9,12 +9,15 @@
   </div>
 </section>
 <% end %>
+ 
 
 <div class="instrument-index-grid pt4">
   <% @informations.each do |information| %>
 
     <div class="instrument border-light">
       <div class="instrument-thumb">
+        
+        
       <%= link_to image_tag(information.image_url(:thumb)), information %>
 
       <% if information.condition? %>
@@ -29,7 +32,7 @@
 
       <h3 class="fw7 f4 title"><%= link_to information.title, information %></h3>
 
-      <p class="has-text-gray fg pt1">Post by <%= information.user.name %></p>
+      <p class="has-text-gray fg pt1">Post by <%#= information.user.name %></p>
 
 
       <% if information_author(information) %>
