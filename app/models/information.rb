@@ -12,7 +12,11 @@ class Information < ApplicationRecord
   CONDITION = %w{ New Fair Poor }
   
   
-   
+  def self.search(search)
+    return Information.all unless search
+    Information.where(['name LIKE ?', "%#{search}%"])
+  end
+
   
   private
   

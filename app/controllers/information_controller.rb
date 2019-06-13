@@ -4,7 +4,9 @@ class InformationController < ApplicationController
   # GET /information
   # GET /information.json
   def index
-    @informations = Information.all.order("created_at desc")
+    @informations = []
+    result = Information.search(params[:search])
+    @informations = result
   end
 
   # GET /information/1
@@ -69,6 +71,6 @@ class InformationController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def information_params
-      params.require(:information).permit(:condition, :title, :description, :image)
+      params.require(:information).permit(:condition, :title, :description, {image: [] })
     end
 end
