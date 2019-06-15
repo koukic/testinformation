@@ -4,9 +4,7 @@ class InformationController < ApplicationController
   # GET /information
   # GET /information.json
   def index
-    @informations = []
-    result = Information.search(params[:search])
-    @informations = result
+     @informations = Information.order("id")
   end
 
   # GET /information/1
@@ -27,6 +25,7 @@ class InformationController < ApplicationController
   # POST /information.json
   def create
     @information = current_user.informations.build(information_params)
+    
 
     respond_to do |format|
       if @information.save
@@ -62,6 +61,11 @@ class InformationController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+    @informations = Information.search(params[:q])
+    render "index"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -73,4 +77,6 @@ class InformationController < ApplicationController
     def information_params
       params.require(:information).permit(:condition, :title, :description, {image: [] })
     end
+    
+     
 end

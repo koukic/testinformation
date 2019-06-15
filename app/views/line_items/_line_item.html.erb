@@ -6,7 +6,8 @@
   <div class="column is-2">
      <figure class="is-128x128 image">
        <%#= image_tag(line_item.information.image_url(:thumb)) %>
-      <%= link_to image_tag(line_item.information.image_url(:thumb)),line_item.information %>
+      <%#= link_to image_tag(line_item.information.image_url(:thumb)),line_item.information %>
+      <%= link_to image_tag(line_item.information.image.first.url(:thumb)), line_item.information %>
       </figure>
   </div>
   <div class="column is-9">

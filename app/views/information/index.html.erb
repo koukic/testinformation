@@ -5,11 +5,16 @@
       <h1 class="title">
         Browse the latest test information
       </h1>
-      <%= form_tag information_index_path, :method => 'get' do %>
+      <%#= form_tag information_index_path, :method => 'get' do %>
         <p>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil %>
+          <%#= text_field_tag :search, params[:search] %>
+          <%#= submit_tag "Search", :name => nil %>
         </p>
+      <%# end %>
+      
+      <%= form_tag :search_information_index, method: :get, class: "search" do %>
+        <%= text_field_tag "q", params[:q] %>
+        <%= submit_tag "検索" %>
       <% end %>
     </div>
   </div>
@@ -25,8 +30,15 @@
       <div class="instrument border-light">
         <div class="instrument-thumb">
           
-          
-        <%#= link_to image_tag(information.image_url(:thumb)), information %>
+        
+        <% if information.image.present? %>
+          <div class="feature-image">
+             
+              <%= link_to image_tag(information.image.first.url(:thumb)), information %>
+            
+          </div>
+        <% end %>
+        
   
         <% if information.condition? %>
           <div class="condition">
@@ -40,7 +52,7 @@
   
         <h3 class="fw7 f4 title"><%= link_to information.title, information %></h3>
   
-        <p class="has-text-gray fg pt1">Post by <%#= information.user.name %></p>
+        <p class="has-text-gray fg pt1">Post by <%= information.user.name %></p>
   
   
         <% if information_author(information) %>

@@ -1,6 +1,6 @@
 class Information < ApplicationRecord
   before_destroy :not_referenced_by_any_line_item
-  mount_uploader :image, ImageUploader
+  mount_uploaders :image, ImageUploader
   serialize :image, JSON
   has_many :line_items
   belongs_to :user, optional: true
@@ -12,10 +12,19 @@ class Information < ApplicationRecord
   CONDITION = %w{ New Fair Poor }
   
   
-  def self.search(search)
-    return Information.all unless search
-    Information.where(['name LIKE ?', "%#{search}%"])
+  
+  class << self
+    def search(query)
+      rel = order("id")
+      if query.present?
+        rel = rel.where("title LIKE ? OR description LIKE ?",
+          "%#{query}%", "%#{query}%")
+      end
+      rel
+    end
   end
+  
+   
 
   
   private

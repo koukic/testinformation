@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :line_items
   resources :carts
-  resources :information 
+  resources :information do
+    get "search", on: :collection
+  end
   
   devise_for :users, controllers: {
     registrations: 'registrations'

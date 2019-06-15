@@ -14,9 +14,9 @@
        
         <% if @information.image.present? %>
           <div class="feature-image">
-            <%# @information.image.each do |image| %>
-              <%= image_tag(@information.image_url) %>
-            <%# end %>
+            <% @information.image.each do |image| %>
+              <%= image_tag(image.url) %>
+            <% end %>
           </div>
         <% end %>
       
@@ -42,7 +42,7 @@
     </div>
     <div class="column is-3 is-offset-1">
       <div class="bg-white pa4 border-radius-3">
-        <p class="has-text-centered mb4">Post by <%#= @information.user.name %></p>
+        <p class="has-text-centered mb4">Post by <%= @information.user.name %></p>
         <%= button_to 'Add to cart', line_items_path(information_id: @information), class: 'button is-warning add-to-cart' %>
       </div>
     </div>
