@@ -37,34 +37,36 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-
-            <% if cart_has_items %>
-              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
-              <span class="icon is-small">
-                <i class="fa fa-shopping-cart"></i>
-              </span>
-              <span>Cart
-                <%= cart_count_over_one %>
-                </span>
-              <% end %>
-            <% end %>
-
-            <% if user_signed_in? %>
-              <%= link_to 'Post', new_information_path, class: "navbar-item button is-dark" %>
-
-              <div class="navbar-item has-dropdown is-hoverable">
-                <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
-                <div class="navbar-dropdown is-right">
-                  <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
-                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+             
+                <%# if cart_has_items %>
+                  <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+                  <span class="icon is-small">
+                    <i class="fa fa-shopping-cart"></i>
+                  </span>
+                  <span>Cart
+                    <%= cart_count_over_one %>
+                    </span>
+                  <% end %>
+                <%# end %>
+               
+            
+               
+                <% if user_signed_in? %>
+                  <%= link_to 'Post', new_information_path, class: "navbar-item button is-dark" %>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+                  <div class="navbar-dropdown is-right">
+                    <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+                    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+                  </div>
                 </div>
-              </div>
-            <% else %>
-
-            <%= link_to "Sign In", new_user_session_path, class:"navbar-item button is-warning" %>
-            <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button is-warning"%>
-
-            <% end %>
+                <% else %>
+  
+                  <%= link_to "Sign In", new_user_session_path, class:"navbar-item button is-warning" %>
+                  <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button is-warning"%>
+  
+                <% end %>
+               
 
             </div>
           </div>

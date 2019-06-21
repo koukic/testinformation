@@ -5,13 +5,6 @@
       <h1 class="title">
         Browse the latest test information
       </h1>
-      <%#= form_tag information_index_path, :method => 'get' do %>
-        <p>
-          <%#= text_field_tag :search, params[:search] %>
-          <%#= submit_tag "Search", :name => nil %>
-        </p>
-      <%# end %>
-      
       <%= form_tag :search_information_index, method: :get, class: "search" do %>
         <%= text_field_tag "q", params[:q] %>
         <%= submit_tag "検索" %>
@@ -35,6 +28,7 @@
           <div class="feature-image">
              
               <%= link_to image_tag(information.image.first.url(:thumb)), information %>
+              
             
           </div>
         <% end %>

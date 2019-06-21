@@ -5,13 +5,11 @@
   
   <div class="column is-2">
      <figure class="is-128x128 image">
-       <%#= image_tag(line_item.information.image_url(:thumb)) %>
-      <%#= link_to image_tag(line_item.information.image_url(:thumb)),line_item.information %>
       <%= link_to image_tag(line_item.information.image.first.url(:thumb)), line_item.information %>
       </figure>
   </div>
   <div class="column is-9">
-    <strong><%#= line_item.information.title %><%= link_to line_item.information.title, line_item.information %></strong>
+    <strong><%= link_to line_item.information.title, line_item.information %></strong>
     <div class="columns align-items-center">
       <div class="content column is-9">
         <%= truncate(line_item.information.description, length: 140) %>

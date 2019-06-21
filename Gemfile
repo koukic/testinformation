@@ -77,4 +77,4 @@ group :production do
 end
 
 gem 'pry-byebug', group: :development
-
+gem 'jquery-rails'
