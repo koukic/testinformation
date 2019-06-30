@@ -5,18 +5,23 @@
       <h1 class="title">
         Browse the latest test information
       </h1>
+      <p>
+        user数が増えたら将来的に投稿者に利益が出る仕組みにしたいと思います。
+      </p>
+      <p>
+        <a href="https://youtu.be/DarjUgCCTKg">『使い方』（クリックしてください）</a>
+      </p>
       <%= form_tag :search_information_index, method: :get, class: "search" do %>
         <%= text_field_tag "q", params[:q] %>
         <%= submit_tag "検索" %>
       <% end %>
+      
+      
     </div>
   </div>
 </section>
 <% end %>
- 
-
 <div class="instrument-index-grid pt4">
-  
   <% if @informations.present? %>
     <% @informations.each do |information| %>
   

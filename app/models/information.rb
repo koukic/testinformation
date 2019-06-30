@@ -4,6 +4,7 @@ class Information < ApplicationRecord
   serialize :image, JSON
   has_many :line_items
   belongs_to :user, optional: true
+  has_many :reviews,dependent: :destroy
   validates :title, presence: true
   validates :description, length: { maximum: 1000, too_long: "%{count} characters is the maximum
   allowed."}

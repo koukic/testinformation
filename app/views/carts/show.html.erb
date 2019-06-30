@@ -3,18 +3,15 @@
 </div>
 <hr/>
 
+<div class="col-3">
 <section class='section'>
   <%= render(@cart.line_items) %>
-  
- 
-  
+</div>
   <div class="columns">
     <div class="column">
       <%= button_to 'Empty Cart', @cart , method: :delete, data: {confirm: "Are you sure? " },class: "button is-danger" %>
     </div>
-    
     <div class="column total has-text-right">
-      
     </div>
   </div>
 </section>

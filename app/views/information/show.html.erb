@@ -45,6 +45,14 @@
         <p class="has-text-centered mb4">Post by <%= @information.user.name %></p>
         <%= button_to 'Add to cart', line_items_path(information_id: @information), class: 'button is-warning add-to-cart' %>
       </div>
+      
+      <div class="reviews">
+        <h1>Send thanks</h1>
+        <%= render @information.reviews %>
+        <div>
+          <%= link_to "Say thank you", new_information_review_path(@information), class: "btn-custom" %>
+        </div>
+      </div>
     </div>
   </div>
 

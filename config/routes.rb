@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :information do
     get "search", on: :collection
+    resources :reviews
   end
   
   devise_for :users, controllers: {
