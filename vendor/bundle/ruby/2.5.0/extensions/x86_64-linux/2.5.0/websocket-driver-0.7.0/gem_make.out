@@ -1,0 +1,15 @@
+current directory: /home/ec2-user/environment/testinformation.1/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/ec2-user/.rvm/rubies/ruby-2.5.3/bin/ruby -r ./siteconf20190709-7782-hggbmi.rb extconf.rb
+creating Makefile
+
+current directory: /home/ec2-user/environment/testinformation.1/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/ec2-user/environment/testinformation.1/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/ec2-user/environment/testinformation.1/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20190709-7782-mmo3tb

@@ -80,3 +80,4 @@ end
 
 gem 'pry-byebug', group: :development
 gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
